@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChainVitae.ViewModels
+namespace ChainVitae.Blockchain
 {
-    public class MainViewModel: IViewModel
+    class GenerateBlockchain
     {
-
     }
 }

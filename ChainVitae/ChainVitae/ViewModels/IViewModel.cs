@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChainVitae.ViewModels
 {
-    public class MainViewModel: IViewModel
+    public abstract class IViewModel
     {
-
     }
 }
