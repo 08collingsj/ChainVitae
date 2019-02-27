@@ -1,0 +1,18 @@
+﻿<Application x:Class="ChainVitae.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ChainVitae"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <!-- INSERT CONSTANT VARIABLES -->
+        <!-- Colours -->
+        
+        
+        <!-- Fonts -->
+        
+        
+        <!-- Component Templates --> 
+        
+      
+    </Application.Resources>
+</Application>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2016
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainVitae", "ChainVitae\ChainVitae.csproj", "{296617B2-8096-4579-868B-62D4E3024C2D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{296617B2-8096-4579-868B-62D4E3024C2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{296617B2-8096-4579-868B-62D4E3024C2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{296617B2-8096-4579-868B-62D4E3024C2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{296617B2-8096-4579-868B-62D4E3024C2D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FB99F3B5-F4AC-41F6-9BF8-AB88B9794F57}
+	EndGlobalSection
+EndGlobal
