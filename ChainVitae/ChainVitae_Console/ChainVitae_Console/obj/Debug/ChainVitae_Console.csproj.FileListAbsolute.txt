@@ -1,0 +1,6 @@
+c:\users\jlc-1\documents\visual studio 2015\Projects\ChainVitae_Console\ChainVitae_Console\bin\Debug\ChainVitae_Console.exe.config
+c:\users\jlc-1\documents\visual studio 2015\Projects\ChainVitae_Console\ChainVitae_Console\obj\Debug\ChainVitae_Console.csprojResolveAssemblyReference.cache
+c:\users\jlc-1\documents\visual studio 2015\Projects\ChainVitae_Console\ChainVitae_Console\bin\Debug\ChainVitae_Console.exe
+c:\users\jlc-1\documents\visual studio 2015\Projects\ChainVitae_Console\ChainVitae_Console\bin\Debug\ChainVitae_Console.pdb
+c:\users\jlc-1\documents\visual studio 2015\Projects\ChainVitae_Console\ChainVitae_Console\obj\Debug\ChainVitae_Console.exe
+c:\users\jlc-1\documents\visual studio 2015\Projects\ChainVitae_Console\ChainVitae_Console\obj\Debug\ChainVitae_Console.pdb
