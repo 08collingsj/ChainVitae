@@ -4,3 +4,11 @@ c:\users\jlc-1\documents\visual studio 2015\Projects\ChainVitae_Console\ChainVit
 c:\users\jlc-1\documents\visual studio 2015\Projects\ChainVitae_Console\ChainVitae_Console\bin\Debug\ChainVitae_Console.pdb
 c:\users\jlc-1\documents\visual studio 2015\Projects\ChainVitae_Console\ChainVitae_Console\obj\Debug\ChainVitae_Console.exe
 c:\users\jlc-1\documents\visual studio 2015\Projects\ChainVitae_Console\ChainVitae_Console\obj\Debug\ChainVitae_Console.pdb
+C:\Users\jlc-1\Documents\ChainVitae\ChainVitae\ChainVitae_Console\ChainVitae_Console\bin\Debug\ChainVitae_Console.exe.config
+C:\Users\jlc-1\Documents\ChainVitae\ChainVitae\ChainVitae_Console\ChainVitae_Console\obj\Debug\ChainVitae_Console.exe
+C:\Users\jlc-1\Documents\ChainVitae\ChainVitae\ChainVitae_Console\ChainVitae_Console\obj\Debug\ChainVitae_Console.pdb
+C:\Users\jlc-1\Documents\ChainVitae\ChainVitae\ChainVitae_Console\ChainVitae_Console\bin\Debug\ChainVitae_Console.exe
+C:\Users\jlc-1\Documents\ChainVitae\ChainVitae\ChainVitae_Console\ChainVitae_Console\bin\Debug\ChainVitae_Console.pdb
+C:\Users\jlc-1\Documents\ChainVitae\ChainVitae\ChainVitae_Console\ChainVitae_Console\obj\Debug\ChainVitae_Console.csprojResolveAssemblyReference.cache
+C:\Users\jlc-1\Documents\ChainVitae\ChainVitae\ChainVitae_Console\ChainVitae_Console\bin\Debug\BCrypt.Net-Next.dll
+C:\Users\jlc-1\Documents\ChainVitae\ChainVitae\ChainVitae_Console\ChainVitae_Console\bin\Debug\BCrypt.Net-Next.xml

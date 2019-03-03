@@ -4,37 +4,74 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ChainVitae_Console
 {
     public class Block
     {
-        private int previousHash;
-        private string[] transactions;
 
-        private int blockHash;
+        //private string[] transactions;
+        private string previousHash;
+        private Transaction[] transactions;
+        private string blockHash;
 
-        public Block(int previousHash, string[] transactions)
+        //public Block(int previousHash, string[] transactions)
+        //{
+        //    this.previousHash = previousHash;
+        //    this.transactions = transactions;
+
+        //    object[] content = { transactions.GetHashCode(), previousHash };
+        //    this.blockHash = content.GetHashCode();
+        //}
+        //Need to hash: Content and transactions
+        public Block(string previousHash, Transaction[] transactions)
         {
             this.previousHash = previousHash;
             this.transactions = transactions;
 
             object[] content = { transactions.GetHashCode(), previousHash };
-            this.blockHash = content.GetHashCode();
+            this.blockHash = content.GetHashCode().ToString();
         }
 
-        public int getPreviousHash()
+        public string getPreviousHash()
         {
             return previousHash;
         }
 
-        public string[] getTransaction()
+        //public string[] getTransaction()
+        //{
+        //    return transactions;
+        //}
+        public Transaction[] getTransactions()
         {
             return transactions;
         }
 
-        public int getBlockHash()
+        public string getBlockHash()
         {
             return blockHash;
         }
+
+        public void printBlock()
+        {
+            Console.WriteLine("++++++++++++++++++++++++++++");
+            Console.WriteLine("Previous Hash: " + getPreviousHash());
+            // Console.WriteLine("TRX: " + string.Join("", getTransaction()));
+            Console.WriteLine("TRX: ");
+            printTransactions();
+            Console.WriteLine("Block Hash: " + getBlockHash());
+            Console.WriteLine("++++++++++++++++++++++++++++");
+        }
+
+        public void printTransactions()
+        {
+            Transaction[] localTRX = getTransactions();
+            foreach (Transaction trx in localTRX)
+            {
+                trx.printTransaction();
+            }
+        }
+
+        
     }
 }
