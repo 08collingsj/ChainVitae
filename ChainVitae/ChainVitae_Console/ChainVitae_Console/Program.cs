@@ -23,14 +23,8 @@ namespace ChainVitae_Console
 
         public static void Genesis()
         {
-            
             Transaction genesisTransaction = new Transaction("1", "2", "We swapped information");
             Transaction[] transactions = new Transaction[] { genesisTransaction };
-            // string[] genesisTransactions = { "To: my first transaction", "From: my first transaction " };
-            //for (int i = 0; i < 10; i++)
-            //{
-                
-            //}
             Block genesisBlock = new Block("0", transactions);
             Console.WriteLine("Genesis Hash: ");
             genesisBlock.printBlock();

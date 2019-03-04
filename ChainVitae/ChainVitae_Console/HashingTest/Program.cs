@@ -21,6 +21,7 @@ namespace HashingTest
             Console.Read();
             
             //Tested against memory addressing:
+            //Consider manual memory allocation to test this
             //for (int i = 0; i < 10; i++)
             //{
             //    Point pt = new Point(5, 8);
