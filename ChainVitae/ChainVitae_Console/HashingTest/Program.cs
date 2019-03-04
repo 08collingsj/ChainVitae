@@ -19,6 +19,16 @@ namespace HashingTest
             pt = new Point(8, 5);
             Console.WriteLine(pt.GetHashCode());
             Console.Read();
+            
+            //Tested against memory addressing:
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    Point pt = new Point(5, 8);
+            //    Console.WriteLine(pt.GetHashCode());
+            //    pt = new Point(8, 5);
+            //    Console.WriteLine(pt.GetHashCode());
+            //    Console.Read();
+            //}
         }
         public struct Point
         {
