@@ -11,9 +11,12 @@ namespace ChainVitae_Console
     {
 
         //private string[] transactions;
+        private int index;
+        private int MaxBlockSize = 10;
         private string previousHash;
         private Transaction[] transactions;
         private string blockHash;
+
 
         //public Block(int previousHash, string[] transactions)
         //{
@@ -33,25 +36,26 @@ namespace ChainVitae_Console
             this.blockHash = content.GetHashCode().ToString();
         }
 
+
+        #region Getters 
         public string getPreviousHash()
-        {
-            return previousHash;
-        }
+        { return previousHash; }
 
         //public string[] getTransaction()
         //{
         //    return transactions;
         //}
         public Transaction[] getTransactions()
-        {
-            return transactions;
-        }
+        { return transactions; }
 
         public string getBlockHash()
-        {
-            return blockHash;
-        }
+        { return blockHash; }
 
+        public int getIndex()
+        { return index; }
+
+        
+        #endregion
         public void printBlock()
         {
             Console.WriteLine("++++++++++++++++++++++++++++");
