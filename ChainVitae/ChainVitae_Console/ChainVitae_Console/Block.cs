@@ -72,7 +72,7 @@ namespace ChainVitae_Console
             Transaction[] localTRX = getTransactions();
             foreach (Transaction trx in localTRX)
             {
-                trx.printTransaction();
+                trx.PrintTransaction();
             }
         }
 

@@ -31,5 +31,18 @@ namespace ChainVitae_Console
             return n.GetHashCode();
         }
 
+        public string GetAddress()
+        {
+            return HashAddress;
+        }
+        //Ensure that HashAddress has been assigned
+        public bool IsValid()
+        {
+            if (HashAddress != "" && HashAddress.Length != 0)
+                return true;
+            
+            return false;
+        }
+
     }
 }

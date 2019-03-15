@@ -9,42 +9,43 @@ namespace ChainVitae_Console
     public class Transaction
     {
         /*
-         * TODO: Replace int with actual Addresses
+         * TODO: Replace string with actual Addresses
          */ 
-        private string ToAddress;
-        private string FromAddress;
-        private string _Data;
+        private Address ToAddress;
+        private Address FromAddress;
+        private Certificate _Certificate;
 
-        public Transaction(string To, string From, string Data)
+        public Transaction(Address To, Address From, Certificate Data)
         {
             this.ToAddress = To;
             this.FromAddress = From;
-            this._Data = Data;
+            this._Certificate = Data;
         }
 
         #region Getters
-        public string getToAddress()
+        public Address GetToAddress()
         {
             return ToAddress;
         }
 
-        public string getFromAddress()
+        public Address GetFromAddress()
         {
             return FromAddress;
         }
 
-        public string getData()
+        public Certificate GetCertificate()
         {
-            return _Data;
+            return _Certificate;
         }
         #endregion
 
-        public void printTransaction()
+        public void PrintTransaction()
         {
             Console.WriteLine("***************");
-            Console.WriteLine("\tTo: " + getToAddress());
-            Console.WriteLine("\tFrom: " + getFromAddress());
-            Console.WriteLine("\tData: " + getData());
+            Console.WriteLine("\tTo: " + ToAddress.GetAddress());
+            Console.WriteLine("\tFrom: " + FromAddress.GetAddress());
+            Console.WriteLine("\tCertificate: " );
+            _Certificate.PrintCertificate();
             Console.WriteLine("***************");
         }
         

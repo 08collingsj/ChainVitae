@@ -1,0 +1,7 @@
+C:\Users\q5081793\Source\repos\ChainVitae_Console\CommunicationInstances\bin\Debug\CommunicationInstances.exe.config
+C:\Users\q5081793\Source\repos\ChainVitae_Console\CommunicationInstances\bin\Debug\CommunicationInstances.exe
+C:\Users\q5081793\Source\repos\ChainVitae_Console\CommunicationInstances\bin\Debug\CommunicationInstances.pdb
+C:\Users\q5081793\Source\repos\ChainVitae_Console\CommunicationInstances\obj\Debug\CommunicationInstances.csprojAssemblyReference.cache
+C:\Users\q5081793\Source\repos\ChainVitae_Console\CommunicationInstances\obj\Debug\CommunicationInstances.csproj.CoreCompileInputs.cache
+C:\Users\q5081793\Source\repos\ChainVitae_Console\CommunicationInstances\obj\Debug\CommunicationInstances.exe
+C:\Users\q5081793\Source\repos\ChainVitae_Console\CommunicationInstances\obj\Debug\CommunicationInstances.pdb

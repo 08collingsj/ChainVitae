@@ -8,8 +8,8 @@ namespace ChainVitae_Console
 {
     public class Certificate
     {
-        private int To; //Address
-        private int From; //Address
+        private Address To; //Address
+        private Address From; //Address
         private DateTime Started;
         private DateTime Finished;
         private string SerialNo;
@@ -19,8 +19,9 @@ namespace ChainVitae_Console
 
         public Certificate()
         {
-            To = 1;
-            From = 2;
+            //Default for testing purposes can not be left in final version!
+            To = new Address();
+            From = new Address();
             Started = new DateTime();
             Finished = new DateTime();
             Started = DateTime.Now.AddYears(-3);
@@ -31,9 +32,9 @@ namespace ChainVitae_Console
             Description = "[Description]";
         }
 
-        public Certificate(int _to, int _from, DateTime _started, DateTime _finished, string _serialNo, string _title, string _grade, string _description)
+        public Certificate(Address _to, Address _from, DateTime _started, DateTime _finished, string _serialNo, string _title, string _grade, string _description)
         {
-            if (_to == 0 || _from == 0 || _started == null || _finished == null)
+            if ( !_to.IsValid() || !_from.IsValid() || _started != null || _finished != null)
             {
                 To = _to;
                 From = _from;
@@ -50,9 +51,62 @@ namespace ChainVitae_Console
             }
         }
 
-        public bool IsValid(Certificate cert)
+        public void PrintCertificate()
         {
-            return true;
+            Console.WriteLine("--------------------------------");
+            Console.WriteLine("\tToAddress: " + To.GetAddress());
+            Console.WriteLine("\tFromAddress: " + From.GetAddress());
+            Console.WriteLine("\tStarted: " + Started.ToLongDateString());
+            Console.WriteLine("\tFinished: " + Finished.ToLongDateString());
+            Console.WriteLine("\tSerialNo: " + SerialNo);
+            Console.WriteLine("\tTitle: " + Title);
+            Console.WriteLine("\tGrade: " + Grade);
+            Console.WriteLine("\tDescription: " + Description);
+            Console.WriteLine("--------------------------------");
         }
+        
+        public bool IsValid()
+        {
+            if (!this.To.IsValid() || !this.From.IsValid() || this.SerialNo != "" || this.Title != "" || this.Grade != "" || this.Description != "")
+            {
+                return true;
+            }
+            return false;
+        }
+
+        #region Validators
+        private bool AddressIsValid()
+        {
+            throw new NotImplementedException();
+        }
+
+        private bool DateTimeIsValid()
+        {
+            throw new NotImplementedException();
+        }
+
+        private bool SerialNoIsValid()
+        {
+            //Might be difficult to validate due to multiple providers of official certificate would benefit
+            //the solution if a custom SerialNo was generated for the purposes of the blockchain 
+            throw new NotImplementedException();
+        }
+
+        private bool TitleIsValid()
+        {
+            //Just needs to check for profanity and check 
+            throw new NotImplementedException();
+        }
+
+        private bool GradeIsValid()
+        {
+            throw new NotImplementedException();
+        }
+
+        private bool DescriptionIsValid()
+        {
+            throw new NotImplementedException();
+        }
+        #endregion
     }
 }

@@ -12,14 +12,22 @@ namespace ChainVitae_Console
         public static List<Block> blockchain = new List<Block>();
         public static void CreateGenesis()
         {
-            //A block needs transations before it can be hashed
-            Transaction genesisTransaction = new Transaction("1", "2", "We swapped information");
-            Transaction[] transactions = new Transaction[] { genesisTransaction };
+            for (int count = 0; count < 10; count++)
+            {
+                Address first = new Address();
+                Address snd = new Address();
+                Certificate crt = new Certificate();
+                //A block needs transations before it can be hashed
+                Transaction genesisTransaction = new Transaction(first, snd, crt);
+                genesisTransaction.PrintTransaction();
+            }
+
+            //Transaction[] transactions = new Transaction[] { genesisTransaction };
             //It is ineffecient to have the genesis block contain only one transaction
-            Block genesisBlock = new Block("0", transactions);
-            Console.WriteLine("Genesis Hash: ");
-            genesisBlock.printBlock();
-            blockchain.Add(genesisBlock);
+         //   Block genesisBlock = new Block("0", transactions);
+            //Console.WriteLine("Genesis Hash: ");
+            //genesisBlock.printBlock();
+            //blockchain.Add(genesisBlock);
             Console.Read();
         }
         public static Block GetBlockByIndex(int id)
