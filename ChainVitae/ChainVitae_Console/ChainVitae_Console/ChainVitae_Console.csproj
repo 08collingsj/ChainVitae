@@ -51,9 +51,11 @@
     <Compile Include="Block.cs" />
     <Compile Include="BlockChain.cs" />
     <Compile Include="Certificate.cs" />
+    <Compile Include="Node.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Transaction.cs" />
+    <Compile Include="Wallet.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

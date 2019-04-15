@@ -10,18 +10,49 @@ namespace ChainVitae_Console
 {
     class Program
     {
-        //Create the blockchain
+        //Treat Program as Master 
        
         static void Main(string[] args)
         {
             //Create a basic blockchain solution
-            
+            //With some genesis data
             Console.WriteLine(Process.GetCurrentProcess().ProcessName + ": " + DateTime.Now.ToString());
             BlockChain.CreateGenesis();
             //BlockChain.AutoAddToBlockchain();
-            
+
+            //Initialise nodes and wallets
+            List<Node> AllNodes = GenerateNodes(10);
+            List<Wallet> wallets = GenerateWallets(10, AllNodes.First());
+            //Leave these Nodes and Wallets to interact with the original [b/c]
+
+
+
+            Console.Read();
+        }
+        /// <summary>
+        /// Generate x Nodes in the system
+        /// </summary>
+        /// <returns></returns>
+        private static List<Node> GenerateNodes(int count)
+        {
+            Node[] nodes = new Node[count];
+            for (int inc = 0; inc < count; inc++)
+            {
+                nodes[inc] = new Node();
+            }
+            return nodes.ToList();
         }
 
-        
+        private static List<Wallet> GenerateWallets(int count, Node node)
+        {
+            Console.WriteLine("All wallets connect to {0}", node.GetId);
+            Wallet[] wallets = new Wallet[count];
+            for (int inc = 0; inc < count; inc++)
+            {
+                wallets[inc] = new Wallet(node);
+            }
+            return wallets.ToList();
+        }
+
     }
 }

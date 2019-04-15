@@ -28,7 +28,7 @@ namespace ChainVitae_Console
             //Console.WriteLine("Genesis Hash: ");
             //genesisBlock.printBlock();
             //blockchain.Add(genesisBlock);
-            Console.Read();
+            
         }
         public static Block GetBlockByIndex(int id)
         {
