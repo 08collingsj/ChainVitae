@@ -42,7 +42,12 @@ namespace ChainVitae_Console
             }
             return nodes.ToList();
         }
-
+        /// <summary>
+        /// Generate x Wallets in the system amd attach to one specific node
+        /// </summary>
+        /// <param name="count"></param>
+        /// <param name="node"></param>
+        /// <returns></returns>
         private static List<Wallet> GenerateWallets(int count, Node node)
         {
             Console.WriteLine("All wallets connect to {0}", node.GetId);
