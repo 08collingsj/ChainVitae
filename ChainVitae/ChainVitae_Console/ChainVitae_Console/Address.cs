@@ -14,10 +14,10 @@ namespace ChainVitae_Console
         // BCrypt.Net.BCrypt();
         public Address()
         {
-            this.HashAddress = generateHashCode().ToString();
+            this.HashAddress = GenerateHashCode().ToString();
         }
 
-        private int generateHashCode()
+        private int GenerateHashCode()
         {
             string n = "";
             for (int i = 0; i< 10; i++)
@@ -31,10 +31,11 @@ namespace ChainVitae_Console
             return n.GetHashCode();
         }
 
-        public string GetAddress()
+        public string GetAddressAsString()
         {
             return HashAddress;
         }
+
         //Ensure that HashAddress has been assigned
         public bool IsValid()
         {

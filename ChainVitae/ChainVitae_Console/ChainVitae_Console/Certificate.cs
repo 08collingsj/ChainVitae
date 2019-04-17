@@ -54,8 +54,8 @@ namespace ChainVitae_Console
         public void PrintCertificate()
         {
             Console.WriteLine("--------------------------------");
-            Console.WriteLine("\tToAddress: " + To.GetAddress());
-            Console.WriteLine("\tFromAddress: " + From.GetAddress());
+            Console.WriteLine("\tToAddress: " + To.GetAddressAsString());
+            Console.WriteLine("\tFromAddress: " + From.GetAddressAsString());
             Console.WriteLine("\tStarted: " + Started.ToLongDateString());
             Console.WriteLine("\tFinished: " + Finished.ToLongDateString());
             Console.WriteLine("\tSerialNo: " + SerialNo);

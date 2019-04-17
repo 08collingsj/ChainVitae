@@ -9,13 +9,13 @@ namespace ChainVitae_Console
     public class Wallet
     {
         private Guid _InstanceID { get; set; }
-        private string _Address;
+        private Address _Address;
         private string _PrivateKey;
         private string _PublicKey;
         private double _Balance = 0.00;
         private Node _MyNode;
 
-        public string GetAddress { get { return _Address; } }
+        public Address GetAddress { get { return _Address; } }
         public string GetPublicKey { get {return _PublicKey; } }
 
         public double GetBalance { get { return _Balance; } }
@@ -29,10 +29,13 @@ namespace ChainVitae_Console
         {
             this._InstanceID = Guid.NewGuid();
             _MyNode = node;
-            _Address = GenerateAddress();
+            _Address = new Address();
             _PrivateKey = GeneratePrivateKey();
             _PublicKey = GeneratePublicKey();
             Console.WriteLine("Wallet created: {0} is connected to {1} ", this.GetId, node.GetId);
+            GenerateTransactionsToWalletAddress(
+                new Address()
+                );
         }
 
         private string GeneratePrivateKey()
@@ -48,6 +51,22 @@ namespace ChainVitae_Console
         private string GenerateAddress()
         {
             return "TempAddress";
+        }
+
+        private void GenerateTransactionsToWalletAddress(Address address)
+        {
+
+            Certificate certificate = new Certificate();
+            Transaction x;
+
+            do
+            {
+                x = new Transaction(address, GetAddress, certificate);
+                Address localAddress = GetAddress;
+
+                Console.WriteLine("New Transaction From: {0} To: {1} ", localAddress.GetAddressAsString(), address.GetAddressAsString());
+                Console.Read();    
+            } while (true);
         }
     }
 }

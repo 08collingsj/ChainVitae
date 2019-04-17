@@ -8,12 +8,10 @@ namespace ChainVitae_Console
 {
     public class Transaction
     {
-        /*
-         * TODO: Replace string with actual Addresses
-         */ 
         private Address ToAddress;
         private Address FromAddress;
         private Certificate _Certificate;
+        private DateTime _TimeStamp = DateTime.Now.ToUniversalTime();
 
         public Transaction(Address To, Address From, Certificate Data)
         {
@@ -37,17 +35,24 @@ namespace ChainVitae_Console
         {
             return _Certificate;
         }
+
+        public string GetTimeStamp()
+        {
+            return _TimeStamp.ToLongDateString();
+        }
         #endregion
 
         public void PrintTransaction()
         {
             Console.WriteLine("***************");
-            Console.WriteLine("\tTo: " + ToAddress.GetAddress());
-            Console.WriteLine("\tFrom: " + FromAddress.GetAddress());
+            Console.WriteLine("\tTo: " + ToAddress.GetAddressAsString());
+            Console.WriteLine("\tFrom: " + FromAddress.GetAddressAsString());
             Console.WriteLine("\tCertificate: " );
             _Certificate.PrintCertificate();
             Console.WriteLine("***************");
         }
+
+       
         
     }
 }

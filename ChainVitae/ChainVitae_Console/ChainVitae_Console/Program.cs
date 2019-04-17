@@ -22,7 +22,7 @@ namespace ChainVitae_Console
 
             //Initialise nodes and wallets
             List<Node> AllNodes = GenerateNodes(10);
-            List<Wallet> wallets = GenerateWallets(10, AllNodes.First());
+            List<Wallet> Wallets = GenerateWallets(10, AllNodes.First());
             //Leave these Nodes and Wallets to interact with the original [b/c]
 
 

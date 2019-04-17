@@ -10,6 +10,7 @@ namespace ChainVitae_Console.Output
     public class Debugger
     {
         private List<string> myLog;
+        //Used for hierachal data 
         private int indentLevel;
 
         public Debugger()
@@ -19,14 +20,19 @@ namespace ChainVitae_Console.Output
 
         public void Add(string Output)
         {
-            
             myLog.Add(Output);
             indentLevel++;
         }
 
         public void Flush()
         {
-            foreach (string s in myLog) {
+            foreach (string s in myLog)
+            {
+                for (int count = 0; count < indentLevel; count++)
+                {
+                    Debug.Write("   ");
+                    Console.Write("    ");
+                }
                 Debug.Write(s);
                 Console.Write(s);
             }

@@ -9,6 +9,20 @@ namespace ChainVitae_Console
 {
     public class Block
     {
+        //BlockHeader Fields
+        //Version - the version number of the software
+        private string _VersionNumber = "0.1";
+        //LastBlock - the hash of the previous block
+        private string _LastBlock;
+        //Merkle Root - the root hash of the Merkle tree
+        private string _MerkleRoot;
+        //Transactions 
+        //Encrypted list of all transactions
+
+        //Time - the time in seconds since 1970–01–01 T00: 00 UTC 
+        private readonly string _Time = DateTime.Now.ToUniversalTime().ToString();
+        //Target - the nonce - the goal of the current difficulty
+        private int Target;
 
         //private string[] transactions;
         private int index;
@@ -17,16 +31,6 @@ namespace ChainVitae_Console
         private Transaction[] transactions;
         private string blockHash;
 
-
-        //public Block(int previousHash, string[] transactions)
-        //{
-        //    this.previousHash = previousHash;
-        //    this.transactions = transactions;
-
-        //    object[] content = { transactions.GetHashCode(), previousHash };
-        //    this.blockHash = content.GetHashCode();
-        //}
-        //Need to hash: Content and transactions
         public Block(string previousHash, Transaction[] transactions)
         {
             this.previousHash = previousHash;
@@ -56,18 +60,18 @@ namespace ChainVitae_Console
 
         
         #endregion
-        public void printBlock()
+        public void PrintBlock()
         {
             Console.WriteLine("++++++++++++++++++++++++++++");
             Console.WriteLine("Previous Hash: " + getPreviousHash());
             // Console.WriteLine("TRX: " + string.Join("", getTransaction()));
             Console.WriteLine("TRX: ");
-            printTransactions();
+            PrintTransactions();
             Console.WriteLine("Block Hash: " + getBlockHash());
             Console.WriteLine("++++++++++++++++++++++++++++");
         }
 
-        public void printTransactions()
+        public void PrintTransactions()
         {
             Transaction[] localTRX = getTransactions();
             foreach (Transaction trx in localTRX)
