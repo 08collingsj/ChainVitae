@@ -1,0 +1,51 @@
+To Do: 
+Have each node store the blockchain. 
+Have each node broadcast to the other nodes when it hears about a new transaction
+Have each node store at least one id of another node (Listening protocol)
+
+Node
+
+NodeID
+Blockchain instance
+List<Node> neighbours
+List<Transaction> MemoryPool
+
+
+
+Node on creation is handed an instance of the blockchain 
+	Is handed a list of other nodes
+	The node then connects to another node to ask the node to update the list with this nodesID
+
+Node Tests:
+	Create Node 
+	Create Node With ID and Blockchain Instance 
+	Create Node with NodesList 
+	Create Node with NodeList and Add thisNode to the List
+	Create Node with NodeList and Add thisNode to the List and update other nodes Lists
+	Deactivate Node
+	Deactive Node and update NodeList
+	Deactivate Node and update all others nodes
+	
+
+Tests: 
+	Create the blockchain
+	Create Genesis block with no transactions
+	Create a node
+	Create a wallet
+	Create a transaction
+	
+	- Sign transaction
+	Use the private key of the 
+
+
+
+
+
+
+
+
+
+
+Extra objectives: 
+	- Have a wallet be distributable 
+	- Have a node be distributable

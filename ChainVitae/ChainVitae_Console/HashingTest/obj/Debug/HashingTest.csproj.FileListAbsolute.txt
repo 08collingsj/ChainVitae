@@ -17,3 +17,4 @@ C:\Users\q5081793\Source\repos\ChainVitae_Console\HashingTest\obj\Debug\HashingT
 C:\Users\q5081793\Source\repos\ChainVitae_Console\HashingTest\obj\Debug\HashingTest.csproj.CoreCompileInputs.cache
 C:\Users\q5081793\Source\repos\ChainVitae_Console\HashingTest\obj\Debug\HashingTest.exe
 C:\Users\q5081793\Source\repos\ChainVitae_Console\HashingTest\obj\Debug\HashingTest.pdb
+C:\Users\jlc-1\Documents\ChainVitae\ChainVitae\ChainVitae_Console\HashingTest\obj\Debug\HashingTest.csprojResolveAssemblyReference.cache

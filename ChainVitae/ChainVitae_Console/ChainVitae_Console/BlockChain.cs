@@ -9,7 +9,9 @@ namespace ChainVitae_Console
 {
     public class BlockChain
     {
-        public static List<Block> blockchain = new List<Block>();
+        //Blockchain hash needed or version number to be able to identify the most recent version
+        //public static List<Block> blockchain = new List<Block>();
+        public static List<BlockWithDouble> Blockchain = new List<BlockWithDouble>();
         public static void CreateGenesis()
         {
             for (int count = 0; count < 10; count++)
@@ -21,6 +23,7 @@ namespace ChainVitae_Console
                 Transaction genesisTransaction = new Transaction(first, snd, crt);
                 genesisTransaction.PrintTransaction();
             }
+        }
 
             //Transaction[] transactions = new Transaction[] { genesisTransaction };
             //It is ineffecient to have the genesis block contain only one transaction
@@ -29,21 +32,23 @@ namespace ChainVitae_Console
             //genesisBlock.printBlock();
             //blockchain.Add(genesisBlock);
             
-        }
-        public static Block GetBlockByIndex(int id)
+        
+        #region BlockWithDouble 
+        public BlockWithDouble GetBlockByIndex(int id)
         {
-            return blockchain[id];
+            return Blockchain[id];
         }
-        public static Block GetLatestBlock()
+        public BlockWithDouble GetLatestBlock()
         {
-            return blockchain.Last();
+            return Blockchain.Last();
         }
 
-        public static void AddBlock(Block newBlock)
+        public void AddBlock(BlockWithDouble newBlock)
         {
-            blockchain.Add(newBlock);
+            Blockchain.Add(newBlock);
         }
-        public static void AutoAddToBlockchain()
+        #endregion
+        public void AutoAddToBlockchain()
         {
             while (true)
             {

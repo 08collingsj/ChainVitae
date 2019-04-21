@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace ChainVitae_Console
 {
-    public class Block
+    public class BlockWithDouble
     {
         //BlockHeader Fields
         //Version - the version number of the software
@@ -28,10 +27,10 @@ namespace ChainVitae_Console
         private int index;
         private int MaxBlockSize = 10;
         private string previousHash;
-        private Transaction[] transactions;
+        private TransactionWithDouble[] transactions;
         private string blockHash;
 
-        public Block(string previousHash, Transaction[] transactions)
+        public BlockWithDouble(string previousHash, TransactionWithDouble[] transactions)
         {
             this.previousHash = previousHash;
             this.transactions = transactions;
@@ -49,7 +48,7 @@ namespace ChainVitae_Console
         //{
         //    return transactions;
         //}
-        public Transaction[] getTransactions()
+        public TransactionWithDouble[] getTransactions()
         { return transactions; }
 
         public string getBlockHash()
@@ -58,9 +57,8 @@ namespace ChainVitae_Console
         public int getIndex()
         { return index; }
 
-        
-        #endregion
 
+        #endregion
         public void PrintBlock()
         {
             Console.WriteLine("++++++++++++++++++++++++++++");
@@ -74,13 +72,12 @@ namespace ChainVitae_Console
 
         public void PrintTransactions()
         {
-            Transaction[] localTRX = getTransactions();
-            foreach (Transaction trx in localTRX)
+            TransactionWithDouble[] localTRX = getTransactions();
+            foreach (TransactionWithDouble trx in localTRX)
             {
                 trx.PrintTransaction();
             }
         }
 
-        
     }
 }

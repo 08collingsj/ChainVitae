@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChainVitae_Console.DataType;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,12 @@ namespace ChainVitae_Console
         private Address FromAddress;
         private Certificate _Certificate;
         private DateTime _TimeStamp = DateTime.Now.ToUniversalTime();
+        private List<Signature> _SignatureLog;
+        //Consider Complexity, Data access patterns, dependencies and size
 
         public Transaction(Address To, Address From, Certificate Data)
         {
+            _SignatureLog = new List<Signature>();
             this.ToAddress = To;
             this.FromAddress = From;
             this._Certificate = Data;
@@ -42,6 +46,18 @@ namespace ChainVitae_Console
         }
         #endregion
 
+        /// <summary>
+        /// Important to ensure that this instance reaches minimum concensus prior to approval 
+        /// </summary>
+        /// <param name="MinConsensusCount"></param>
+        /// <returns></returns>
+        public bool HasTransactionReachedConcensus(int MinConsensusCount)
+        {
+            if (_SignatureLog.Count >= MinConsensusCount)
+                return true;
+            else
+                return false;
+        }
         public void PrintTransaction()
         {
             Console.WriteLine("***************");

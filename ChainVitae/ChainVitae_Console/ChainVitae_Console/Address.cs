@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BCrypt;
+using System.Security.Cryptography;
 
 namespace ChainVitae_Console
 {
     public class Address
     {
-        private string HashAddress; 
+        private string privateKey;
+        private string publicKey; 
         //To and From 
         // BCrypt.Net.BCrypt();
         public Address()
@@ -31,6 +32,24 @@ namespace ChainVitae_Console
             return n.GetHashCode();
         }
 
+        private string GenerateKeys()
+        {
+            // Generate a public/private key using RSA  
+            using (var rsa = new RSACryptoServiceProvider(1024))
+            {
+                try
+                {
+                    // Do something with the key...
+                    // Encrypt, export, etc.
+                    rsa
+                }
+                finally
+                {
+                    rsa.PersistKeyInCsp = false;
+                }
+            }
+
+        }
         public string GetAddressAsString()
         {
             return HashAddress;
