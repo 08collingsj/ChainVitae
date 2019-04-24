@@ -9,6 +9,7 @@ namespace ChainVitae_Console
 {
     public class Address
     {
+        private string HashAddress;
         private string privateKey;
         private string publicKey; 
         //To and From 
@@ -41,7 +42,7 @@ namespace ChainVitae_Console
                 {
                     // Do something with the key...
                     // Encrypt, export, etc.
-                    rsa
+                    return "";
                 }
                 finally
                 {

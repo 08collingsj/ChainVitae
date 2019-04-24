@@ -44,6 +44,11 @@ namespace ChainVitae_Console
         {
             return _TimeStamp.ToLongDateString();
         }
+
+        public List<Signature> GetSignatures()
+        {
+            return _SignatureLog;
+        }
         #endregion
 
         /// <summary>

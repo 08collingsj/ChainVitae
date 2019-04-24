@@ -14,5 +14,15 @@ namespace ChainVitae_Console.Node
     /// </summary>
     public class Processor
     {
+        private static Listener myListener;
+        public Processor()
+        {
+
+        }
+
+        public void AssignListener(Listener listener)
+        {
+            myListener = listener;
+        }
     }
 }
