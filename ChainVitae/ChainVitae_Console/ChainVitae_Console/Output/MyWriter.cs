@@ -13,13 +13,13 @@ namespace ChainVitae_Console.Output
         private static List<string> writerList = new List<string>();
         public static void Write(string value)
         {
-            string myString = "CV v1.0.0: " + DateTime.Now.ToLongDateString() + "   " + value;
+            string myString = "CV v1.0.0: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "   " + value;
             Console.WriteLine(myString);
             writerList.Add(myString);
         }
         public static void WriteLine(string value)
         {
-            string myString = "CV v1.0.0: " + DateTime.Now.ToLongDateString() + "   " + value;
+            string myString = "CV v1.0.0: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "   " + value;
             Console.WriteLine(myString);
             writerList.Add(myString);
         }

@@ -16,7 +16,7 @@ namespace ChainVitae_Console
         private Boolean Active = true;
         private BlockChain theChain;
         private List<NodeInstance> NeighborNodes;
-        private List<Transaction> MemoryPool; 
+        private List<string> MemoryPool; 
         private string _Name;
         private string _Location = "No Location Assigned";
         //private Listener myListener;
@@ -49,15 +49,17 @@ namespace ChainVitae_Console
          *  {PROCESSOR}
          *  A node needs a second loop for processing transactions from the mempool  
          */
-
+        
         public NodeInstance(BlockChain myChain, List<NodeInstance> allNodes)
         {
             this._InstanceID = Guid.NewGuid();
             this.NeighborNodes = allNodes;
             this.theChain = myChain;
+            this.MemoryPool = new List<string>();
             SetName(_InstanceID.ToString());
             MyWriter.WriteLine("Node created: " + this._InstanceID);
             myListener = new Listener();
+            SendNewNodeWhisper(allNodes, this);
         }
 
         public void PrintUniqueInstanceID()
@@ -92,16 +94,57 @@ namespace ChainVitae_Console
             else
                 return false;
         }
-        
 
-      
+        public void SendAddBlockWhisper(List<NodeInstance> list, BlockWithDouble newBlock)
+        {
+            foreach (NodeInstance i in list)
+            {
+                i.AddToBlockchain(newBlock);
+            }
+        }
+        public void SendNewNodeWhisper(List<NodeInstance> list, NodeInstance node)
+        {
+            foreach (NodeInstance i in list)
+            {
+                i.AddToNeighbors(node);
+            }
+        }
+        public void SendNewTransactionWhisper(List<NodeInstance> list, TransactionWithDouble newTrx)
+        {
+            foreach (NodeInstance i in list)
+            {
+                i.ProcessTransaction(newTrx);
+            }
+        }
         private void UpdateBlockchain()
         { }
         private void AddToBlockchain(BlockWithDouble newBlock)
-        { this.theChain.AddBlock(newBlock); }
+        {  theChain.AddBlock(newBlock); }
 
+        private void ProcessTransaction(TransactionWithDouble newTrx)
+        {
+            if (newTrx != null)
+            {
+                if (Address.IsValid(newTrx.GetToAddress()) &&
+                        Address.IsValid(newTrx.GetFromAddress()) &&
+                            newTrx.GetValue() != 0 && 
+                                newTrx.GetSignatureLog() != null)
+                {
+                    SignTransaction(newTrx);
+                }
+            }
+        }
+
+        private void SignTransaction(TransactionWithDouble trx)
+        {
+            trx.GetSignatureLog();
+        }
         private void UpdateNeighbors()
         { }
-        private void AddToNeighbors() { }
+        private void AddToNeighbors(NodeInstance node)
+        {
+            if (!NeighborNodes.Contains(node))
+                this.NeighborNodes.Add(node);
+        }
     }
 }

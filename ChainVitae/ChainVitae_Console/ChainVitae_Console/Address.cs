@@ -57,12 +57,12 @@ namespace ChainVitae_Console
         }
 
         //Ensure that HashAddress has been assigned
-        public bool IsValid()
+        public static bool IsValid(Address address)
         {
-            if (HashAddress != "" && HashAddress.Length != 0)
+            if (address.HashAddress != "" && address.HashAddress.Length != 0)
                 return true;
-            
-            return false;
+            else
+                return false;
         }
 
     }

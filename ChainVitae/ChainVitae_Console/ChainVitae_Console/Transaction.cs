@@ -52,6 +52,10 @@ namespace ChainVitae_Console
         }
         #endregion
 
+        public void SignTransaction(NodeInstance node)
+        {
+            _SignatureLog.Add(new Signature(node.GetId));
+        }
         /// <summary>
         /// Important to ensure that this instance reaches minimum concensus prior to approval 
         /// </summary>

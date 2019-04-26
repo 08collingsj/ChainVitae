@@ -48,6 +48,11 @@ namespace ChainVitae_Console
             {
                 return _TimeStamp.ToLongDateString();
             }
+
+            public List<Signature> GetSignatureLog()
+            {
+                return _SignatureLog;
+            }
             /// <summary>
             /// Important to ensure that this instance reaches minimum concensus prior to approval 
             /// </summary>

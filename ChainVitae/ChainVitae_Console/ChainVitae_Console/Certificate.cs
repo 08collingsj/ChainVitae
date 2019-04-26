@@ -1,6 +1,7 @@
 ﻿using ChainVitae_Console.Output;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,7 +36,7 @@ namespace ChainVitae_Console
 
         public Certificate(Address _to, Address _from, DateTime _started, DateTime _finished, string _serialNo, string _title, string _grade, string _description)
         {
-            if ( !_to.IsValid() || !_from.IsValid() || _started != null || _finished != null)
+            if ( !Address.IsValid(_to) || !Address.IsValid(_from) || _started != null || _finished != null)
             {
                 To = _to;
                 From = _from;
@@ -68,22 +69,22 @@ namespace ChainVitae_Console
         
         public bool IsValid()
         {
-            if (!this.To.IsValid() || !this.From.IsValid() || this.SerialNo != "" || this.Title != "" || this.Grade != "" || this.Description != "")
-            {
+            if (Address.IsValid(To) && Address.IsValid(From) && this.SerialNo != "" && this.Title != "" && this.Grade != "" && this.Description != "" && DateTimeIsValid(Started) && DateTimeIsValid(Finished))
                 return true;
-            }
-            return false;
+            else
+                return false;
         }
 
         #region Validators
-        private bool AddressIsValid()
-        {
-            throw new NotImplementedException();
-        }
 
-        private bool DateTimeIsValid()
+        private bool DateTimeIsValid(DateTime dateTime)
         {
-            throw new NotImplementedException();
+            DateTime creationTime = new DateTime(2019,4,26);
+            int timeDifference = DateTime.Compare(creationTime, dateTime);
+           if (dateTime >= DateTime.Now || DateTime.Compare(creationTime, dateTime) >= 0)
+               return true;
+           else
+               return false;
         }
 
         private bool SerialNoIsValid()

@@ -33,8 +33,8 @@ namespace ChainVitae_Console
             {
                 MyWriter.WriteLine("Enter Command: ");
                 MyWriter.Write("(Type -h for commands list)");
-                string value = Console.ReadLine();
-                switch (value)
+                string input = Console.ReadLine();
+                switch (input)
                 {
                     case "-h":
                         MyWriter.WriteLine("-Run         :   To Run the Program under automatic conditions");
@@ -59,7 +59,7 @@ namespace ChainVitae_Console
                         Environment.Exit(0);
                         break;
                     default:
-                        MyWriter.WriteLine("Input: " + value + " is not a recognised command ");
+                        MyWriter.WriteLine("Input: " + input + " is not a recognised command ");
                         break;
                 }
             }
@@ -79,11 +79,10 @@ namespace ChainVitae_Console
             trxArray[0] = new TransactionWithDouble(genTo, genFrom, 50.0);
             BlockWithDouble GenesisBlock = new BlockWithDouble("GENESIS HASH", trxArray);
             genesisChain.AddBlock(GenesisBlock);
-            NodeInstance GenesisNode = new NodeInstance(genesisChain);
-            GenesisNode.PrintData();
-
             List<NodeInstance> NodesList = new List<NodeInstance>();
-            NodesList = GenerateNodes(10, genesisChain);
+            NodeInstance GenesisNode = new NodeInstance(genesisChain, NodesList);
+            GenesisNode.PrintData();
+            //NodesList = GenerateNodes(10, genesisChain);
             List<Address> AddressesList = new List<Address>();
             AddressesList = GenerateAddressesList(10);
         }
@@ -92,23 +91,45 @@ namespace ChainVitae_Console
         #region RunProgram
         private static void RunProgram(bool printIsWanted)
         {
-            MyWriter.WriteLine("Press p to pause program.");
-            MyWriter.WriteLine("Press x to stop program.");
-            MyWriter.WriteLine("Press o to save output to text file.");
-
-            if (printIsWanted)
+            bool Run = true;
+            do
             {
-                MyWriter.WriteLine("Program is Running");
-                //Needs to simulate the operation of nodes
-                //Needs to simulate the operation of transactions
-                //Needs to simulate the validation of transactions
-                //Needs to simulate the generation of blocks
-                //Needs to simulate the addition of block to the chain 
-            }
-            else
-            {
+                if (printIsWanted)
+                {
+                    MyWriter.WriteLine("Program is Running");
+                    //Needs to simulate the operation of 10 nodes
+                    
+                    //Needs to simulate the operation of transactions : constant using 10 addresses
+                    //Needs to simulate the validation of transactions 
+                    //Needs to simulate the generation of blocks : when the memory pool has reached a total of 50 transactions then put them into a block
+                    //Needs to simulate the addition of block to the chain 
+                }
+                else
+                {
 
-            }
+                }
+
+                MyWriter.WriteLine("Press p to pause program.");
+                MyWriter.WriteLine("Press x to stop program.");
+                MyWriter.WriteLine("Press o to save output to text file.");
+                string input = Console.ReadLine();
+                switch (input)
+                {
+                    case "-p":
+                        MyWriter.WriteLine("Program Paused");
+                        MyWriter.WriteLine("Press p to resume program.");
+                        break;
+                    case "-x":
+                        Run = false;
+                        break;
+                    case "-o":
+                        break;
+                    default:
+                        MyWriter.WriteLine("Input: " + input + " is not a recognised command ");
+                        break;
+                }
+                
+            } while (Run);
         }
         #endregion
 
@@ -135,8 +156,8 @@ namespace ChainVitae_Console
             NodeInstance[] nodes = new NodeInstance[instanceCount];
             for (int count = 0; count < instanceCount; count++)
             {
-                NodeInstance ni = new NodeInstance(blockChain);
-                nodes[count] = ni;
+                //NodeInstance ni = new NodeInstance(blockChain);
+                //nodes[count] = ni;
                // nodes[inc] = new NodeInstance(genesis);
             }
             return nodes.ToList();

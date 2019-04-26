@@ -20,7 +20,7 @@ namespace ChainVitae_Console.Node
         {
             myBw = new BackgroundWorker();
             myBw.DoWork += new System.ComponentModel.DoWorkEventHandler(myBw_DoWork);
-            myBw.RunWorkerAsync();
+            myBw.RunWorkerAsync(2000);
         }
 
         #region Listener 
