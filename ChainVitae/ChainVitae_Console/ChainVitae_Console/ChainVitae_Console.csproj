@@ -57,6 +57,7 @@
     <Compile Include="NodeFunctionality\Listener.cs" />
     <Compile Include="NodeFunctionality\Processor.cs" />
     <Compile Include="Output\Debugger.cs" />
+    <Compile Include="Output\MyWriter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Testing\Harness.cs" />

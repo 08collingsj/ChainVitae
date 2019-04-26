@@ -1,4 +1,5 @@
 ﻿using ChainVitae_Console.DataType;
+using ChainVitae_Console.Output;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -63,11 +64,11 @@ namespace ChainVitae_Console
 
             public void PrintTransaction()
             {
-                Console.WriteLine("***************");
-                Console.WriteLine("\tTo: " + ToAddress.GetAddressAsString());
-                Console.WriteLine("\tFrom: " + FromAddress.GetAddressAsString());
-                Console.WriteLine("\tValue: " + Value.ToString());
-                Console.WriteLine("***************");
+            MyWriter.WriteLine("***************");
+            MyWriter.WriteLine("\tTo: " + ToAddress.GetAddressAsString());
+            MyWriter.WriteLine("\tFrom: " + FromAddress.GetAddressAsString());
+            MyWriter.WriteLine("\tValue: " + Value.ToString());
+            MyWriter.WriteLine("***************");
             }
     }
 

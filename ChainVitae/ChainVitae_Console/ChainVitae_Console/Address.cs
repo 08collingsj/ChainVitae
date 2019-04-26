@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using ChainVitae_Console.Output;
 
 namespace ChainVitae_Console
 {
@@ -29,7 +30,6 @@ namespace ChainVitae_Console
                 char let = (char)('a' + num);
                 n = n + let;
             }
-            Console.Write(n);
             return n.GetHashCode();
         }
 

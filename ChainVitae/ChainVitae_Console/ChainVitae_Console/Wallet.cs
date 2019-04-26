@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChainVitae_Console.Output;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,16 +36,13 @@ namespace ChainVitae_Console
             this._InstanceID = Guid.NewGuid();
             LocalLog = new List<string>();
             _Timestamp = DateTime.Now;
-            Console.WriteLine("Wallet Created: ");
-            Console.WriteLine("GUID: {0}   Time: {1}   Public Key: {2}   {3} ", this.GetId.ToString(), 
-                                                                          this.GetTimeStamp.ToLongDateString(), 
-                                                                          this.GetPublicKey, 
-                                                                          this.GetActiveState.ToString());
+            MyWriter.WriteLine("Wallet Created: ");
+            MyWriter.WriteLine("GUID: " + GetId.ToString() + "  Time: " + GetTimeStamp.ToLongDateString() + "   Public Key: " + GetPublicKey + "    " + GetActiveState.ToString());
             _MyNode = node;
             _Address = new Address();
             _PrivateKey = GeneratePrivateKey();
             _PublicKey = GeneratePublicKey();
-            Console.WriteLine("Wallet created: {0} is connected to {1} ", this.GetId, node.GetId);
+            MyWriter.WriteLine("Wallet created: " + GetId + " is connected to " + node.GetId);
             GenerateTransactionsToWalletAddress(
                 new Address()
                 );
@@ -75,7 +73,7 @@ namespace ChainVitae_Console
                 x = new Transaction(address, GetAddress, certificate);
                 Address localAddress = GetAddress;
 
-                Console.WriteLine("New Transaction From: {0} To: {1} ", localAddress.GetAddressAsString(), address.GetAddressAsString());
+                MyWriter.WriteLine("New Transaction From: " + localAddress.GetAddressAsString() + "To: " + address.GetAddressAsString());
                 Console.Read();    
             } while (true);
         }
@@ -88,8 +86,8 @@ namespace ChainVitae_Console
             {
                 x = new TransactionWithDouble(address, GetAddress, d);
                 Address localAddress = GetAddress;
-                Console.WriteLine("New Transaction From: {0} To: {1} ", localAddress.GetAddressAsString(), address.GetAddressAsString());
-                Console.WriteLine(d);
+                MyWriter.WriteLine("New Transaction From: " + localAddress.GetAddressAsString() + " To: " + address.GetAddressAsString());
+                MyWriter.WriteLine(d.ToString());
                 Console.Read();
             } while (true);
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChainVitae_Console.Output;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -61,13 +62,13 @@ namespace ChainVitae_Console
         #endregion
         public void PrintBlock()
         {
-            Console.WriteLine("++++++++++++++++++++++++++++");
-            Console.WriteLine("Previous Hash: " + getPreviousHash());
+            MyWriter.WriteLine("++++++++++++++++++++++++++++");
+            MyWriter.WriteLine("Previous Hash: " + getPreviousHash());
             // Console.WriteLine("TRX: " + string.Join("", getTransaction()));
-            Console.WriteLine("TRX: ");
+            MyWriter.WriteLine("TRX: ");
             PrintTransactions();
-            Console.WriteLine("Block Hash: " + getBlockHash());
-            Console.WriteLine("++++++++++++++++++++++++++++");
+            MyWriter.WriteLine("Block Hash: " + getBlockHash());
+            MyWriter.WriteLine("++++++++++++++++++++++++++++");
         }
 
         public void PrintTransactions()

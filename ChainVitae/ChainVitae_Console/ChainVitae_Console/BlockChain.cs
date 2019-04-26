@@ -12,19 +12,7 @@ namespace ChainVitae_Console
         //Blockchain hash needed or version number to be able to identify the most recent version
         //public static List<Block> blockchain = new List<Block>();
         public static List<BlockWithDouble> Blockchain = new List<BlockWithDouble>();
-        public static void CreateGenesis()
-        {
-            for (int count = 0; count < 10; count++)
-            {
-                Address first = new Address();
-                Address snd = new Address();
-                Certificate crt = new Certificate();
-                //A block needs transations before it can be hashed
-                Transaction genesisTransaction = new Transaction(first, snd, crt);
-                genesisTransaction.PrintTransaction();
-            }
-        }
-
+        
             //Transaction[] transactions = new Transaction[] { genesisTransaction };
             //It is ineffecient to have the genesis block contain only one transaction
          //   Block genesisBlock = new Block("0", transactions);

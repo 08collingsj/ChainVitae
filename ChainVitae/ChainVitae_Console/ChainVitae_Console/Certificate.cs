@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChainVitae_Console.Output;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -47,22 +48,22 @@ namespace ChainVitae_Console
             }
             else
             {
-                Console.WriteLine("Certificate contains a null or 0 value and cant be added to the blockchain");
+                MyWriter.WriteLine("Certificate contains a null or 0 value and cant be added to the blockchain");
             }
         }
 
         public void PrintCertificate()
         {
-            Console.WriteLine("--------------------------------");
-            Console.WriteLine("\tToAddress: " + To.GetAddressAsString());
-            Console.WriteLine("\tFromAddress: " + From.GetAddressAsString());
-            Console.WriteLine("\tStarted: " + Started.ToLongDateString());
-            Console.WriteLine("\tFinished: " + Finished.ToLongDateString());
-            Console.WriteLine("\tSerialNo: " + SerialNo);
-            Console.WriteLine("\tTitle: " + Title);
-            Console.WriteLine("\tGrade: " + Grade);
-            Console.WriteLine("\tDescription: " + Description);
-            Console.WriteLine("--------------------------------");
+            MyWriter.WriteLine("--------------------------------");
+            MyWriter.WriteLine("\tToAddress: " + To.GetAddressAsString());
+            MyWriter.WriteLine("\tFromAddress: " + From.GetAddressAsString());
+            MyWriter.WriteLine("\tStarted: " + Started.ToLongDateString());
+            MyWriter.WriteLine("\tFinished: " + Finished.ToLongDateString());
+            MyWriter.WriteLine("\tSerialNo: " + SerialNo);
+            MyWriter.WriteLine("\tTitle: " + Title);
+            MyWriter.WriteLine("\tGrade: " + Grade);
+            MyWriter.WriteLine("\tDescription: " + Description);
+            MyWriter.WriteLine("--------------------------------");
         }
         
         public bool IsValid()
